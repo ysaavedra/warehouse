@@ -1,0 +1,16 @@
+{% for item in items %}
+    <li>{{ item.name }}
+        -
+        {{ item.description }}
+        -
+        {{ item.price }}
+        -
+        {% if item.stock > 10 %}
+            Available
+        {% elseif item.stock > 0 %}
+            Only {{ item.stock }} left!
+        {% else %}
+            Sold-out!
+        {% endif %}
+    </li>
+{% endfor %}
