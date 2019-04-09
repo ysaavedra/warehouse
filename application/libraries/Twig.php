@@ -170,7 +170,7 @@ class Twig
 		// after loading CodeIgniter functions in a controller.
 		$this->addFunctions();
 
-		$view = $view . '.php';
+		$view = $view . '.twig';
 		return $this->twig->render($view, $params);
 	}
 
