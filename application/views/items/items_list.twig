@@ -1,16 +1,86 @@
-{% for item in items %}
-    <li>{{ item.name }}
-        -
-        {{ item.description }}
-        -
-        {{ item.price }}
-        -
-        {% if item.stock > 10 %}
-            Available
-        {% elseif item.stock > 0 %}
-            Only {{ item.stock }} left!
-        {% else %}
-            Sold-out!
-        {% endif %}
-    </li>
-{% endfor %}
+{% extends "layouts/adminlte.twig" %}
+
+{% block content %}
+    <section
+        class="content">
+
+        <!-- Default box -->
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Data Table With Full Features</h3>
+                <button class="btn btn-primary pull-right" data-target="#modal-add-item" data-toggle="modal" type="button">Agregar</button>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <table class="table table-bordered table-striped" id="example1">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Browser</th>
+                            <th>Platform(s)</th>
+                            <th>Engine version</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                            <tr>
+                                <td>{{ item.name }}</td>
+                                <td>
+                                    {{ item.description }}
+                                </td>
+                                <td>{{ item.price }}</td>
+                                <td>
+                                    {% if item.stock > 10 %}
+                                        Available
+                                    {% elseif item.stock > 0 %}
+                                        Only
+                                        {{ item.stock }}
+                                        left!
+                                    {% else %}
+                                        Sold-out!
+                                    {% endif %}
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Prodyct</th>
+                            <th>Browser</th>
+                            <th>Platform(s)</th>
+                            <th>Engine version</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </section>
+
+    <div class="modal fade" id="modal-add-item">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Agregar nuevo producto</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Aqui el formulario</p>
+                    <form>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default pull-left" data-dismiss="modal" type="button">Cerrar</button>
+                    <button class="btn btn-primary" type="button">Agregar producto</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+{% endblock %}
