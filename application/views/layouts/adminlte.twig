@@ -104,7 +104,7 @@
                                             <a class="btn btn-default btn-flat" href="#">Profile</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a class="btn btn-default btn-flat" href="#">Sign out</a>
+                                            <a class="btn btn-default btn-flat" href="auth/logout">Sign out</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -245,7 +245,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Blank page
+                         {{page_title, 'asdasd'}}
                         <small>it all starts here</small>
                     </h1>
                     <ol class="breadcrumb">
@@ -509,18 +509,6 @@
         </script>
 
         <!-- page script -->
-        <script>
-            $(function () {
-                $('#example1').DataTable()
-                $('#example2').DataTable({
-                    'paging': true,
-                    'lengthChange': false,
-                    'searching': false,
-                    'ordering': true,
-                    'info': true,
-                    'autoWidth': false
-                })
-            })
-        </script>
+        {% block scripts %}{% endblock %}
     </body>
 </html>

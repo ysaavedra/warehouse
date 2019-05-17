@@ -70,8 +70,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Aqui el formulario</p>
-                    <form>
-                    </form>
+                    <form></form>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-default pull-left" data-dismiss="modal" type="button">Cerrar</button>
@@ -83,4 +82,19 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+{% endblock %}
+{% block scripts %}
+    <script>
+        $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            })
+        })
+    </script>
 {% endblock %}
