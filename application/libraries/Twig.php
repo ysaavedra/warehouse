@@ -40,7 +40,7 @@ class Twig
 	 */
 	private $functions_safe = [
 		'form_open', 'form_close', 'form_error', 'form_hidden', 'form_input', 'form_checkbox', 'form_submit', 'set_value',
-		'form_open_multipart',//, 'form_upload', 'form_submit', 'form_dropdown',
+		'form_open_multipart', 'htmlspecialchars'//, 'form_upload', 'form_submit', 'form_dropdown',
 //		'set_radio', 'set_select', 'set_checkbox',
 	];
 
