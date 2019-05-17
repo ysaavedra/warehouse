@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta content="IE=edge" http-equiv="X-UA-Compatible">
-        <title>AdminLTE 2 | Blank Page</title>
+        <title>{{ page_title|default('Blank Page') }} | Warehouse</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -104,7 +104,7 @@
                                             <a class="btn btn-default btn-flat" href="#">Profile</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a class="btn btn-default btn-flat" href="auth/logout">Sign out</a>
+                                            <a class="btn btn-default btn-flat" href="{{base_url()}}auth/logout">Sign out</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -245,8 +245,8 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                         {{page_title, 'asdasd'}}
-                        <small>it all starts here</small>
+                        {{ page_title|default('Blank Page') }}
+                        <small>{{ page_slogan|default('it all starts here') }}</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li>
