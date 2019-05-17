@@ -6,12 +6,13 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">{{ lang('index_heading') }}</h3>
+                <h3 class="box-title">
+                    <div id="infoMessage">{{ message|striptags }}</div>
+                </h3>
             </div>
             <div class="box-body">
-                <p>{{ lang('index_subheading') }}</p>
-                <div id="infoMessage">{{ message }}</div>
-                <table id="table-default" class="table table-bordered table-striped">
+
+                <table class="table table-bordered table-striped" id="table-default">
                     <thead>
                         <tr>
                             <th>{{ lang('index_fname_th') }}</th>
@@ -30,7 +31,7 @@
                                 <td>{{ user.email }}</td>
                                 <td>
                                     {% for group in user.groups %}
-                                        {{anchor("auth/edit_group/".group.id, group.name)}}
+                                        <a href="{{base_url()}}auth/edit_group/{{group.id}}">{{group.name}}</a>
                                     {% endfor %}
                                 </td>
                                 <td>
@@ -74,5 +75,7 @@
 {% endblock %}
 
 {% block scripts %}
-    <script>$('#table-default').DataTable();</script>
+    <script>
+        $('#table-default').DataTable();
+    </script>
 {% endblock %}

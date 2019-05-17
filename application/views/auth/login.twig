@@ -49,7 +49,7 @@
             <div class="login-box-body">
 
                 <div id="infoMessage">
-                    <p class="login-box-msg">{{message}}</p>
+                    <p class="login-box-msg">{{message|striptags}}</p>
                 </div>
                 <form action="{{base_url()}}auth/login" method="post">
                     <div class="form-group has-feedback">
